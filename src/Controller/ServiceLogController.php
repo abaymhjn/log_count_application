@@ -44,11 +44,11 @@ class ServiceLogController extends AbstractController
 			}	
 			if($startDate)
 			{
-				$where .= ' AND log_time >= "'.$startDate.'"';
+				$where .= ' AND log_time >= "'.date("Y-m-d",strtotime($startDate)).'"';
 			}
 			if($endDate)
 			{
-				$where .= ' AND log_time <= "'.$endDate.'"';
+				$where .= ' AND log_time <= "'.date("Y-m-d",strtotime($endDate)).'"';
 			}
 			if($statusCode)
 			{
